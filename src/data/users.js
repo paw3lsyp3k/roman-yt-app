@@ -18,7 +18,7 @@ export const users = [
 
     {
         name: 'Nikodem Zagrobelny',
-        attendance: '75%%',
+        attendance: '75%',
         average: '3.8',
     },
 
