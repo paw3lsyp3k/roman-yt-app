@@ -7,6 +7,7 @@ import { theme } from '../assets/styles/theme'
 import { Wrapper } from './Root.styles';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import Form from '../components/organisms/Form/Form';
+import { Menu } from '../components/organisms/Menu/Menu.styles';
 
 
 const initialFormState = {
@@ -54,10 +55,10 @@ const Root = () => {
     <ThemeProvider theme={theme}>
       <GlobalStyle />
       <Wrapper>
-        <nav>
-          <Link to="/">Home</Link>
-          <Link to="/add-user">Add user</Link>
-        </nav>
+          <Menu>
+            <Link to="/" className="menuLink">Home</Link>
+            <Link to="/add-user" className="menuLink">Add user</Link>
+          </Menu>
         <Routes>
           <Route path="/" element={<UsersList deleteUser={deleteUser} users={users}/>}/>
           <Route path="/add-user" element={<Form formValues={formValues} handleAddUser={handleAddUser} handleInputChange={handleInputChange}/>} />
