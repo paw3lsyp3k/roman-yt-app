@@ -1,15 +1,12 @@
 import React from 'react';
-import { users as usersData} from '../../../data/users';
 import UsersListItem from '../../molecules/UsersListItem/UsersListItem';
-import { Wrapper } from './UserList.styles';
-import FormField from '../../molecules/FormField/FormField';
-import { Button } from '../../atoms/Button/Button';
+import PropTypes from 'prop-types'
+import { UserShape } from '../../../types';
 
 
 const UsersList = ({users, deleteUser}) => {
     return(
         <>
-            <Wrapper>
             <h1>Users List</h1>
                 <ul>
                     {
@@ -18,11 +15,14 @@ const UsersList = ({users, deleteUser}) => {
                     ))
                     }
                 </ul>
-            </Wrapper>
         </>
     );
 }
 
 
+UsersList.propTypes = {
+    users: PropTypes.arrayOf(PropTypes.shape(UserShape)),
+    deleteUser: PropTypes.func,
+  };
 
 export default UsersList;
