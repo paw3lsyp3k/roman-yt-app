@@ -13,7 +13,7 @@ const Navigation = () => {
           Buddy
         </h1>
       </Logo>
-      <StyledLink  className={(navData) =>  navData.isActive ? "active" : ''} to="/">Dashboard</StyledLink>
+      <StyledLink  to="/">Dashboard</StyledLink>
       <StyledLink  to="/add-user">Add user</StyledLink>
     </Wrapper>
   );

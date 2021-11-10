@@ -28,14 +28,32 @@ export const Logo = styled.div`
   }
 `;
 
-export const StyledLink = styled(NavLink)`
+const activeClass =(navData) =>  navData.isActive ? "active" : '';
+
+export const StyledLink = styled(NavLink).attrs({ className: activeClass })`
   font-weight: bold;
   text-decoration: none;
   color: ${({ theme }) => theme.colors.darkGrey};
   text-align: right;
   margin: 15px 20px 15px auto;
+  position: relative;
 
   &.active {
-    color: green;
+    &::after {
+      opacity: 1;
+    }
   }
+
+  &::after {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+      content: '';
+      position: absolute;
+      width: 14px;
+      height: 3px;
+      top: 50%;
+      transform: translateY(-50%);
+      right: -20px;
+      background-color: ${({theme}) => theme.colors.darkPurple};
+    }
 `;
