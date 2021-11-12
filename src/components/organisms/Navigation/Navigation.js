@@ -1,6 +1,5 @@
 import React from 'react';
 import { Logo, StyledLink, Wrapper } from '../Navigation/Navigation.styles';
-import { NavLink } from 'react-router-dom';
 
 
 const Navigation = () => {

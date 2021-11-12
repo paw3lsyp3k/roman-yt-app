@@ -4,14 +4,14 @@ import PropTypes from 'prop-types'
 import { UserShape } from '../../../types';
 
 
-const UsersList = ({users, deleteUser}) => {
+const UsersList = ({users}) => {
     return(
         <>
             <h1>Users List</h1>
                 <ul>
                     {
                 users.map( (userData, i) => (
-                    <UsersListItem deleteUser={deleteUser} index={i} key={userData.name}  userData={userData}/>   
+                    <UsersListItem   key={userData.name}  userData={userData}/>   
                     ))
                     }
                 </ul>
