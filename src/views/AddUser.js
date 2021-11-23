@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react';
 import FormField from '../components/molecules/FormField/FormField';
 import { Button } from '../components/atoms/Button/Button';
 import { ViewWrapper } from '../components/molecules/ViewWrapper/ViewWrapper';
-import UsersProvider from '../providers/UsersProvider';
+import { UsersContext } from '../providers/UsersProvider';
 
 const initialFormState = {
     name: '',
@@ -14,7 +14,7 @@ const initialFormState = {
 const AddUser = (ctx) => {
 
     const [formValues, setFormValues] = useState(initialFormState);
-    const { handleAddUser } = useContext(UsersProvider)
+    const { handleAddUser } = useContext(UsersContext)
 
 
     const handleInputChange = (e) => {
